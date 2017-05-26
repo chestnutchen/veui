@@ -24,9 +24,7 @@ export default {
   mixins: [input],
   props: {
     ui: String,
-    name: String,
-    value: String,
-    disabled: Boolean,
+    value: null,
     checked: Boolean,
     indeterminate: Boolean
   },
