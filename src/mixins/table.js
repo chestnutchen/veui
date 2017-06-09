@@ -1,2 +1,2 @@
-import { genParentTracker } from '../utils/helper'
-export default genParentTracker('table')
+import { getTypedAncestorTracker } from '../utils/helper'
+export default getTypedAncestorTracker('table')

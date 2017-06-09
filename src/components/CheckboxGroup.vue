@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     localName () {
-      return this.name || uniqueId('veui-checkboxgroup-')
+      return this.realName || uniqueId('veui-checkboxgroup-')
     }
   },
   methods: {
