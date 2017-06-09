@@ -11,7 +11,7 @@
 <script>
 import Icon from './Icon'
 import { input } from '../mixins'
-import { assign } from 'lodash'
+import { assign, omit } from 'lodash'
 import { patchIndeterminate } from '../utils/dom'
 import 'vue-awesome/icons/check'
 import 'vue-awesome/icons/minus'
@@ -39,10 +39,7 @@ export default {
   },
   computed: {
     attrs () {
-      let attrs = assign({}, this.$props)
-      delete attrs.ui
-      delete attrs.indeterminate
-      return attrs
+      return assign(omit(this.$props, ['ui', 'indeterminate']), { name: this.realName })
     }
   },
   methods: {

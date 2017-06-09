@@ -192,5 +192,17 @@ export default {
     width: 16px;
     margin: 0 12px;
   }
+  &[ui~="alt"] {
+    .veui-button {
+      border-color: @veui-gray-color-sup-3;
+      background-color: @veui-gray-color-sup-3;
+    }
+
+    .veui-button:hover,
+    .veui-button:focus {
+      border-color: @veui-gray-color-sup-4;
+      background-color: @veui-gray-color-sup-4;
+    }
+  }
 }
 </style>
