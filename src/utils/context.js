@@ -1,4 +1,4 @@
-import { isArray, isString, isObject } from 'lodash'
+import { isString, isObject } from 'lodash'
 
 function isVnode (vnode) {
   return isObject(vnode) && vnode.componentOptions
@@ -36,10 +36,10 @@ export function getVnodes (ref, context) {
   let vnodes
   if (isString(ref)) {
     vnodes = context.$refs[ref]
-    vnodes = isArray(vnodes) ? vnodes : [vnodes]
+    vnodes = Array.isArray(vnodes) ? vnodes : [vnodes]
     vnodes = vnodes.map(item => item.$vnode || item)
   } else {
-    ref = isArray(ref) ? ref : [ref]
+    ref = Array.isArray(ref) ? ref : [ref]
     vnodes = ref.map(item => {
       if (item.$vnode) {
         return item.$vnode

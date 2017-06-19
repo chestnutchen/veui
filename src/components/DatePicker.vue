@@ -50,7 +50,7 @@ import '../icons'
 import moment from 'moment'
 import { dropdown, input } from '../mixins'
 import { config } from '../managers'
-import { isArray, isObject, pick } from 'lodash'
+import { isObject, pick } from 'lodash'
 
 config.defaults({
   'datepicker.shortcuts': []
@@ -108,7 +108,7 @@ export default {
       let selected = this.localSelected
       if (this.range) {
         let current = this.picking || selected
-        if (isArray(current)) {
+        if (Array.isArray(current)) {
           return current.map(date => this.formatDate(date))
         }
       }

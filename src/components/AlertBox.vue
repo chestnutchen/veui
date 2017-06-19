@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { pick, find, includes } from 'lodash'
+import { pick, find, includes, assign } from 'lodash'
 import Dialog from './Dialog'
 import Button from './Button'
 import Icon from './Icon'
@@ -28,7 +28,7 @@ import '../icons'
 
 export default {
   name: 'veui-alert-box',
-  props: Object.assign(
+  props: assign(
     pick(Dialog.props, ['open', 'title', 'ui'])
   ),
   components: {
